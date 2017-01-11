@@ -11,6 +11,16 @@
 
 module.exports.bootstrap = function(cb) {
 
+    sails.io.on('connect', function(socket){
+        socket.on('joinstream', function(data){
+            console.log(socket.handshake.address + " joined the stream");
+            sails.sockets.join(socket, 'stream');
+            TwitterService.startService();
+        });
+    });
+
+
+
   // It's very important to trigger this callback method when you are finished
   // with the bootstrap!  (otherwise your server will never lift, since it's waiting on the bootstrap)
   cb();

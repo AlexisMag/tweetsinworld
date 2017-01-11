@@ -1,0 +1,10 @@
+/* Rename this file to api.js and indicate your credentials, this file will be ignored by git */
+
+module.exports.api = {
+    twitter: {
+        consumer_key: '',
+        consumer_secret: '',
+        access_token_key: '',
+        access_token_secret: ''
+    }
+}
